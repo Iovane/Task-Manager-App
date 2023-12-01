@@ -30,14 +30,14 @@
       <%= form.select :status, ['NOT STARTED', 'IN PROGRESS', 'COMPLETED'], { prompt: 'Select status' }, class: "form-control" %>
     </div>
 
-    <!-- Add more form fields as needed -->
-
     <div class="form-group">
       <%= form.submit class: "btn btn-primary" %>
+      <%= link_to "Back to Tasks List", tasks_path, class: "btn btn-secondary" %>
+
     </div>
+
   <% end %>
 
-  <%= link_to "Back to Task List", tasks_path, class: "btn btn-secondary" %>
 </div>
 
 <!-- Bootstrap JS (optional) -->

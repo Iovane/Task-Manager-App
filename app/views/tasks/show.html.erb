@@ -30,6 +30,8 @@
 
 
 <div class="text-center"> <%= link_to "Go back", tasks_path, class: "btn btn-outline-dark" %>
+    <% if logged_in? && (@task.user == current_user || current_user.admin?) %>
       <%= link_to "Edit", edit_task_path(@task), class: "btn btn-outline-info" %>
       <%= link_to "Delete", task_path(@task), class: "btn btn-outline-danger", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+    <% end %>
 </div>

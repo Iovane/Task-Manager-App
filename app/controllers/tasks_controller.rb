@@ -13,6 +13,7 @@ class TasksController < ApplicationController
 
   def create
     @task = Task.new(tasks_params)
+    @task.user = User.find(session[:user_id])
 
     if @task.save
       flash[:notice] = "Task was created successfully"
